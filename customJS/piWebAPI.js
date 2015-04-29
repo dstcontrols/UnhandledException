@@ -4,5 +4,5 @@ var result = $.ajax("https://osiproghackuc2015.osisoft.com/piwebapi/streams/A0Ej
 		type : 'GET', 
 		username : "osiproghack\\hackuser051", 
 		password : "bO2rA53P2", 
-		headers: { "Authorization" : "basic " + bota("osiproghack\\hackuser051:bO2rA53P2")
+		headers: { "Authorization" : "basic " + btoa("osiproghack\\hackuser051:bO2rA53P2")
 	}});
