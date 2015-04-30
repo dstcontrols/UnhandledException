@@ -13,9 +13,7 @@
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-
-    
+    <script src="js/Chart.min.js"></script>
     <!-- Custom CSS -->
     <link href="css/freelancer.css" rel="stylesheet">
     <link href="css/customCss.css" rel="stylesheet">
@@ -33,11 +31,13 @@
     <![endif]-->
 
     <script src="js/Chart.min.js"></script>
+    <script src="js/spin.min.js"></script>
     
 </head>
 
-<body id="page-top" class="index">
-
+<body id="page-top" class="index" style="width:100%;">
+    <div id="spinner" style='z-index:999;'></div>
+    <div id='blackout' style='width:100%; height:100%; background:#18bc9c; z-index:998; opacity = 0.25; position:fixed; top:0;left:0;'>&nbsp;</div>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="" title="Joe Dalton">
+                    <img class="img-responsive" src="img/profile.svg" alt="">
                     <div class="intro-text">
                         <span class="name">2015 OSIsoft Fitness Awards</span>
                         <hr class="star-light">
@@ -99,13 +99,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-<<<<<<< HEAD
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="distanceTravelled();">
-=======
-                                                            <h3 style="text-align:center;">Distance Ran</h3>
-
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="updateChart(); updateChart2();">
->>>>>>> origin/master
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -115,14 +109,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-<<<<<<< HEAD
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal" onclick="caloriesBurned();">
-=======
-                                                            <h3 style="text-align:center;">Foot Steps</h3>
-
-
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
->>>>>>> origin/master
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal" onclick="stepsTaken();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -132,14 +119,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-<<<<<<< HEAD
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal" onclick="sleep(); ">
-=======
-                                        <h3 style="text-align:center;">Calories Burnt</h3>
-
-
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
->>>>>>> origin/master
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal" onclick="caloriesBurned();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -149,13 +129,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-<<<<<<< HEAD
                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal" onclick="activeHours();">
-=======
-                    <h3 style="text-align:center;">Hours Active</h3>
-
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
->>>>>>> origin/master
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -165,13 +139,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-<<<<<<< HEAD
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal" onclick="couchPotato();">
-=======
-                                        <h3 style="text-align:center;">Sleep Time</h3>
-
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
->>>>>>> origin/master
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal" onclick="sleep();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -181,15 +149,13 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                                        <h3 style="text-align:center;">Minutes Sedentary</h3>
-
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal" onclick="couchPotato();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/couch.svg" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
@@ -205,15 +171,13 @@
                 <div class="col-lg-12 text-center">
                     <h2>About</h2>
                     <hr class="star-light">
+                    <h3>Icon Credits</h3>
+                    <p>All icons licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></p>
+                    <p>Flame icon source by <a href="http://www.icomoon.io" title="Icomoon">Icomoon</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a></p>
+                    <p>All other icon sources by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p></p>
-                </div>
-                <div class="col-lg-4">
-                    <p></p>
-                </div>
             </div>
         </div>
     </section>
@@ -273,18 +237,14 @@
                 <div class="row">
                     <div>
                         <div class="modal-body">
-                            <h2>Distance Travelled</h2>
+                         <h3>Congratulations To</h3>
+                            <h3 id="runnerWinner" style="color:red;"></h3>
+                            <h2>The Ultra Marathoner</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
+                            <div class="col-lg-12">
+                                <h3>Travelling the greatest distance</h3>
                                 <canvas id="distanceChart" width="600" height="400"></canvas>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -308,18 +268,14 @@
                 <div class="row">
                     <div>
                         <div class="modal-body">
-                            <h2>Calories Burned</h2>
+                                                    <h3>Congratulations To</h3>
+                                                        <h3 id="gasWinner" style="color:red;"></h3>
+                            <h2>The Gas Guzzler</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
+                            <div class="col-lg-12">
+                                <h3>Burning calories like they're $0.50 per gallon</h3>
                                 <canvas id="caloriesChart" width="600" height="400"></canvas>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -343,19 +299,15 @@
                 <div class="row">
                     <div>
                         <div class="modal-body">
+                                                    <h3>Congratulations To</h3>
+                                                        <h3 id="sleepWinner" style="color:red;"></h3>
                             <h2>The Hibernating Bear</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
-                                <h3>Most Hours Slept</h3>
+                            <div class="col-lg-12">
+                                <h3>Do not disturb while sleeping</h3>
                                 <canvas id="sleepChart" width="600" height="400"></canvas>
                             </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -377,20 +329,15 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <div class="modal-body">
-                            <h2>Active Hours</h2>
+                        <div class="modal-body"> <h3>Congratulations To</h3>
+                                                        <h3 id="busyWinner" style="color:red;"></h3>
+                            <h2>The Busy Beaver</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
+                            <div class="col-lg-12">
+                                <h3>Perhaps a Red Bull addict</h3>
                                 <canvas id="activeHoursChart" width="600" height="400"></canvas>
                             </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -412,20 +359,15 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <div class="modal-body">
-                            <h2>The Netflix binging couch potato</h2>
+                        <div class="modal-body"><h3>Congratulations To</h3>
+                                                        <h3 id="couchWinner" style="color:red;"></h3></h3>
+                            <h2>The Couch Potato</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
-                                <h3>Most time sedentary</h3>
+                            <div class="col-lg-12">
+                                <h3>Most time Netflix binging</h3>
                                 <canvas id="couchPotatoChart" width="600" height="400"></canvas>
                             </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -447,19 +389,19 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <div class="modal-body">
-                            <h2>Distance Awards</h2>
+                        <div class="modal-body"><h3>Congratulations To</h3>
+                                                        <h3 id="stepsWinner" style="color:red;"></h3></h3>
+                            <h2>Luke Powerwalker</h2>
                             <hr class="star-primary">
                             
+<<<<<<< HEAD
+                            <div class="col-lg-12">
+                                <h3>The Most Steps Taken</h3>
+=======
                             <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart" width="600" height="400"></canvas>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
+                                <h3>Steppin up 2 the streets</h3>
+>>>>>>> master
+                                <canvas id="stepsTakenChart" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -470,201 +412,34 @@
             </div>
         </div>
     </div>
-
-
-<!--************************8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888-->
-
-  <!-- <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
 
     <script type="text/javascript">
+
+
+var opts = {
+  lines: 11, // The number of lines to draw
+  length: 0, // The length of each line
+  width: 30, // The line thickness
+  radius: 23, // The radius of the inner circle
+  corners: 0, // Corner roundness (0..1)
+  rotate: 0, // The rotation offset
+  direction: 1, // 1: clockwise, -1: counterclockwise
+  color: '#FFF', // #rgb or #rrggbb or array of colors
+  speed: 1.1, // Rounds per second
+  trail: 81, // Afterglow percentage
+  shadow: false, // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinner', // The CSS class to assign to the spinner
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  top: '50%', // Top position relative to parent
+  left: '50%' // Left position relative to parent
+};
+var target = document.getElementById('spinner');
+var spinner = new Spinner(opts).spin(target);
 
 
  var barData = {
@@ -756,6 +531,23 @@ var couchPotatoData = {
     ]
 }
 
+var stepsTakenData = {
+    labels : [],
+    datasets : [
+        {
+            fillColor : "rgba(172,194,132,0.4)",
+            strokeColor : "#ACC26D",
+            pointColor : "#fff",
+            pointStrokeColor : "#9DB86D",
+            Direction: 'horizontal',
+            responsive: true,
+            data : []
+        }
+    ]
+}
+
+var winner;
+
    function distanceTravelled(){
         var distanceTravelledData = [];
         var promises = [];
@@ -789,8 +581,14 @@ var couchPotatoData = {
             for (var k = 0; k < distanceTravelledData.length; k++) {
                 distanceData.labels.push(distanceTravelledData[k].Person);
                 distanceData.datasets[0].data.push(distanceTravelledData[k].Total);
+                if(k==0)
+                    winner = distanceTravelledData[k].Person;
             };
+            winnerel = document.getElementById("runnerWinner")
+                        winnerel.innerHTML = (winner)
             updateDistanceChartNow();
+            
+
         });
    }
 
@@ -825,8 +623,14 @@ var couchPotatoData = {
             for (var k = 0; k < caloriesBurnedData.length; k++) {
                 calorieData.labels.push(caloriesBurnedData[k].Person);
                 calorieData.datasets[0].data.push(caloriesBurnedData[k].Total);
+                if(k==0)
+                    winner = caloriesBurnedData[k].Person;
+                 
             };
+            winnerel = document.getElementById("gasWinner")
+                        winnerel.innerHTML = (winner)
             updateCalorieChartNow();
+
         }); 
    }
 
@@ -861,8 +665,13 @@ var couchPotatoData = {
             for (var k = 0; k < sleepData.length; k++) {
                 sleepChartData.labels.push(sleepData[k].Person);
                 sleepChartData.datasets[0].data.push(sleepData[k].Total);
+                                if(k==0)
+                    winner = sleepData[k].Person;
             };
+                        winnerel = document.getElementById("sleepWinner")
+                        winnerel.innerHTML = (winner)
             updateSleepChartNow();
+
         }); 
    }
 
@@ -897,7 +706,12 @@ var couchPotatoData = {
             for (var k = 0; k < activeHoursD.length; k++) {
                 activeHourData.labels.push(activeHoursD[k].Person);
                 activeHourData.datasets[0].data.push(activeHoursD[k].Total);
+
+                     if(k==0)
+                    winner = activeHoursD[k].Person;
             };
+                                    winnerel = document.getElementById("busyWinner")
+                        winnerel.innerHTML = (winner)
             updateActiveHoursNow();
         });  
    }
@@ -933,8 +747,53 @@ var couchPotatoData = {
             for (var k = 0; k < couchPotatoHours.length; k++) {
                 couchPotatoData.labels.push(couchPotatoHours[k].Person);
                 couchPotatoData.datasets[0].data.push(couchPotatoHours[k].Total);
+                                               if(k==0)
+                    winner = couchPotatoHours[k].Person;
             };
+                                                winnerel = document.getElementById("couchWinner")
+                        winnerel.innerHTML = (winner)
             updateCouchPotatoNow();
+
+        });  
+   }
+
+   function stepsTaken(){
+        var stepsTakenD = [];
+        var promises = [];
+
+        stepsTakenData.labels = [];
+        stepsTakenData.datasets[0].data = [];
+        updateStepsTaken();
+
+        for (var i = 0; i < activeElements.length ; i++) {
+            var currentPerson = activeElements[i];
+
+            for (var j = 0; j < currentPerson.Attributes.length; j++) {
+                var currentAttribute = currentPerson.Attributes[j];
+
+                if (currentAttribute.Attribute == "Steps") { 
+                    var attr = currentAttribute;
+                    var person = currentPerson;
+
+                    promises.push(getAttributeTotal(currentAttribute,currentPerson,stepsTakenD));    
+                }
+            }
+        }
+
+        $.when.apply($,promises).done(function(inputs){
+            stepsTakenD = stepsTakenD.sort(function(a,b){
+                return b.Total - a.Total;
+            });
+
+            for (var k = 0; k < stepsTakenD.length; k++) {
+                stepsTakenData.labels.push(stepsTakenD[k].Person);
+                stepsTakenData.datasets[0].data.push(stepsTakenD[k].Total);
+                if(k==0)
+                    winner = stepsTakenD[k].Person;
+            };
+                                                            winnerel = document.getElementById("stepsWinner")
+                        winnerel.innerHTML = (winner)
+            updateStepsTaken();
         });  
    }
 
@@ -943,14 +802,17 @@ var couchPotatoData = {
                 type : 'GET', 
                 headers: { "Authorization" : "Basic " + btoa("osiproghack\\hackuser051:bO2rA53P2")},
                 success : function(results){
-                    destination.push({ Person:person.Person, Total:results.Items[0].Value.Value});
+                    destination.push({ 
+                        Person : person.Person, 
+                        Total : (Math.round(100 * results.Items[0].Value.Value) / 100)
+                    });
                 }
             });
    }
 
     function updateDistanceChartNow (){
         var chartCanvas = document.getElementById("distanceChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("distanceChart").getContext("2d");
         new Chart(myChart).Bar(distanceData);
@@ -958,7 +820,7 @@ var couchPotatoData = {
 
     function updateCalorieChartNow (){
         var chartCanvas = document.getElementById("caloriesChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("caloriesChart").getContext("2d");
         new Chart(myChart).Bar(calorieData);
@@ -966,7 +828,7 @@ var couchPotatoData = {
 
     function updateSleepChartNow (){
         var chartCanvas = document.getElementById("sleepChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("sleepChart").getContext("2d");
         new Chart(myChart).Bar(sleepChartData);
@@ -974,7 +836,7 @@ var couchPotatoData = {
 
     function updateActiveHoursNow (){
         var chartCanvas = document.getElementById("activeHoursChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("activeHoursChart").getContext("2d");
         new Chart(myChart).Bar(activeHourData);
@@ -982,10 +844,18 @@ var couchPotatoData = {
 
     function updateCouchPotatoNow (){
         var chartCanvas = document.getElementById("couchPotatoChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("couchPotatoChart").getContext("2d");
         new Chart(myChart).Bar(couchPotatoData);
+    }
+
+    function updateStepsTaken(){
+        var chartCanvas = document.getElementById("stepsTakenChart");
+        chartCanvas.style.width = '100%';
+        chartCanvas.style.height = '400px';
+        var myChart = document.getElementById("stepsTakenChart").getContext("2d");
+        new Chart(myChart).Bar(stepsTakenData);
     }
 
     </script>
