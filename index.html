@@ -16,6 +16,7 @@
 <script src="js/Chart.min.js"></script>
     <!-- Custom CSS -->
     <link href="css/freelancer.css" rel="stylesheet">
+        <link href="css/customCss.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -94,7 +95,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="updateChart(); updateChart2();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -103,6 +104,16 @@
                         <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
                     </a>
                 </div>
+
+
+
+
+
+
+
+
+
+
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -230,47 +241,20 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1">
+                    <div>
                         <div class="modal-body">
-                            <h2>Distance</h2>
+                            <h2>Distance Awards</h2>
                             <hr class="star-primary">
-                            <!--img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt=""-->
-                            <h3>Longest distance traveled</h3>
-                            <div class="col-lg-6">
-                                Chart Here
-
-                                <canvas id="buyers" width="600" height="400"></canvas>
-
-
-
-
-
-                                
-
-
-
-
-
+                            
+                            <div style="width: 50%; float:left;">
+                                <h3>Longest distance traveled</h3>
+                                <canvas id="myChart" width="600" height="400"></canvas>
                             </div>
-                            <div class="col-lg-6">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                            <div class="col-lg-12">
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                        </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                        </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                        </strong>
-                                    </li>
-                                </ul>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+
+                            <div style="width:50%; margin-left:50%;">
+                                <h3 style="margin-top:54px;">Longest distance traveled</h3>
+                                <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -278,6 +262,19 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -471,7 +468,20 @@
     <script type="text/javascript">
 
 
- var buyerData = {
+ var barData = {
+    labels : ["January","February","March","April","May","June"],
+    datasets : [
+        {
+            fillColor : "rgba(172,194,132,0.4)",
+            strokeColor : "#ACC26D",
+            pointColor : "#fff",
+            pointStrokeColor : "#9DB86D",
+            data : [203,156,99,251,305,247]
+        }
+    ]
+}
+
+ var barData2 = {
     labels : ["January","February","March","April","May","June"],
     datasets : [
         {
@@ -485,10 +495,42 @@
 }
 
 
-    var buyers = document.getElementById('buyers').getContext('2d');
-    new Chart(buyers).Line(buyerData);
+    //var myChart = document.getElementById("myChart2").getContext("2d");
+   // new Chart(myChart).Bar(barData);
 
-    //myBarChart.update();
+   //var myChart2 = document.getElementById("myChart2").getContext("2d");
+   //new Chart(myChart2).Bar(barData);
+
+
+
+
+    function updateChart() {
+setTimeout(function() { updateNow(); }, 1000);
+}
+    function updateNow (){
+        var chartCanvas = document.getElementById("myChart");
+        chartCanvas.style.width = '600px';
+        chartCanvas.style.height = '400px';
+        chartCanvas.width = 600;
+        chartCanvas.height = 400;
+        var myChart = document.getElementById("myChart").getContext("2d");
+        new Chart(myChart).Bar(barData);
+    }
+
+        function updateChart2() {
+setTimeout(function() { updateNow2(); }, 1000);
+}
+    function updateNow2(){
+        var chartCanvas = document.getElementById("myChart2");
+        chartCanvas.style.width = '600px';
+        chartCanvas.style.height = '400px';
+        chartCanvas.width = 600;
+        chartCanvas.height = 400;
+        var myChart2 = document.getElementById("myChart2").getContext("2d");
+        new Chart(myChart2).Bar(barData2);
+    }
+
+
 
 
     </script>
