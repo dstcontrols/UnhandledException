@@ -95,7 +95,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="updateChart(); updateChart2();">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="distanceTravelled(); updateChart(); updateChart2();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -104,16 +104,6 @@
                         <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
                     </a>
                 </div>
-
-
-
-
-
-
-
-
-
-
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -262,18 +252,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
@@ -502,11 +480,56 @@
    //new Chart(myChart2).Bar(barData);
 
 
+   function distanceTravelled(){
+        var distanceTravelledData = [];
+        var promises = [];
 
+        for (var i = 0; i < activeElements.length ; i++) {
+            var currentPerson = activeElements[i];
+
+            for (var j = 0; j < currentPerson.Attributes.length; j++) {
+                var currentAttribute = currentPerson.Attributes[j];
+
+                if (currentAttribute.Attribute == "Distance") { 
+                    var attr = currentAttribute;
+                    var person = currentPerson;
+
+                    promises.push(getAttributeTotal(currentAttribute,currentPerson,distanceTravelledData));    
+                }
+            }
+        }
+
+        $.when.apply($,promises).done(function(inputs){
+            distanceTravelledData = distanceTravelledData.sort(function(a,b){
+                return b.Distance - a.Distance;
+            });
+
+
+            barData.labels = [];
+            barData.datasets[0].data = [];
+
+            for (var k = 0; k < distanceTravelledData.length; k++) {
+                barData.labels.push(distanceTravelledData[k].Person);
+                barData.datasets[0].data.push(distanceTravelledData[k].Distance);
+            };
+            updateNow();
+        });
+   }
+
+   function getAttributeTotal(attribute,person,destination){
+        return $.ajax("https://osiproghackuc2015.osisoft.com/piwebapi/streams/" + attribute.AttributeWebId + "/summary?starttime=\"2015-1-1\"",{
+                type : 'GET', 
+                headers: { "Authorization" : "Basic " + btoa("osiproghack\\hackuser051:bO2rA53P2")},
+                success : function(results){
+                    destination.push({ Person:person.Person, Distance:results.Items[0].Value.Value});
+                }
+            });
+   }
 
     function updateChart() {
-setTimeout(function() { updateNow(); }, 1000);
-}
+        setTimeout(function() { updateNow(); }, 1000);
+    }
+
     function updateNow (){
         var chartCanvas = document.getElementById("myChart");
         chartCanvas.style.width = '600px';
@@ -517,9 +540,10 @@ setTimeout(function() { updateNow(); }, 1000);
         new Chart(myChart).Bar(barData);
     }
 
-        function updateChart2() {
-setTimeout(function() { updateNow2(); }, 1000);
-}
+    function updateChart2() {
+        setTimeout(function() { updateNow2(); }, 1000);
+    }
+
     function updateNow2(){
         var chartCanvas = document.getElementById("myChart2");
         chartCanvas.style.width = '600px';

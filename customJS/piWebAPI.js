@@ -51,7 +51,11 @@ var getFitbitActivityAttributes = function(object) {
 			activeElements.push(object);
 			for (var i = 0; i < results.Items.length; i++) {
 				var attribute = results.Items[i];
-				getAttributeTotal(object,attribute.Name,attribute.WebId);
+
+				object.Attributes.push({
+					Attribute : attribute.Name,
+					AttributeWebId : attribute.WebId
+				});
 			};
 		}
 	});
@@ -66,32 +70,36 @@ var getFitbitSleepAttributes = function(object) {
 			sleepElements.push(object);
 			for (var i = 0; i < results.Items.length; i++) {
 				var attribute = results.Items[i];
-				getAttributeTotal(object,attribute.Name,attribute.WebId);
+
+				object.Attributes.push({
+					Attribute : attribute.Name,
+					AttributeWebId : attribute.WebId
+				});
 			};
 		}
 	});
 }
 
-var getAttributeTotal = function(object,attributeName, attributeWebId) {
-	$.ajax("https://osiproghackuc2015.osisoft.com/piwebapi/streams/" + attributeWebId + "/summary?starttime=\"2015-1-1\"",{
-		type : 'GET', 
-		headers: { "Authorization" : "Basic " + btoa("osiproghack\\hackuser051:bO2rA53P2")},
-		success: function(results){
+// var getAttributeTotal = function(object,attributeName, attributeWebId) {
+// 	$.ajax("https://osiproghackuc2015.osisoft.com/piwebapi/streams/" + attributeWebId + "/summary?starttime=\"2015-1-1\"",{
+// 		type : 'GET', 
+// 		headers: { "Authorization" : "Basic " + btoa("osiproghack\\hackuser051:bO2rA53P2")},
+// 		success: function(results){
 
-			for (var i = 0; i <results.Items.length; i++){
-				var item = results.Items[i];
+// 			for (var i = 0; i <results.Items.length; i++){
+// 				var item = results.Items[i];
 
-				if (item.Type == "Total") {	
-					object.Attributes.push({
-					Attribute : attributeName,
-					AttributeWebId : attributeWebId,
-					AttributeTotal : item.Value.Value
-					})
-				}
-			}
-		}
-	});
-}
+// 				if (item.Type == "Total") {	
+// 					object.Attributes.push({
+// 					Attribute : attributeName,
+// 					AttributeWebId : attributeWebId,
+// 					AttributeTotal : item.Value.Value
+// 					})
+// 				}
+// 			}
+// 		}
+// 	});
+// }
 
 	
 
