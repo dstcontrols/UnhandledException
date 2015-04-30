@@ -13,10 +13,12 @@
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-<script src="js/Chart.min.js"></script>
+    
+
+    
     <!-- Custom CSS -->
     <link href="css/freelancer.css" rel="stylesheet">
-        <link href="css/customCss.css" rel="stylesheet">
+    <link href="css/customCss.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -30,6 +32,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="js/Chart.min.js"></script>
+    
 </head>
 
 <body id="page-top" class="index">
@@ -95,7 +99,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="updateChart(); updateChart2();">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="distanceTravelled();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -104,13 +108,8 @@
                         <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
                     </a>
                 </div>
-
-
-
-
-
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal" onclick="caloriesBurned();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -120,7 +119,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal" onclick="sleep(); ">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -130,7 +129,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal" onclick="activeHours();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -140,7 +139,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal" onclick="couchPotato();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -240,6 +239,181 @@
                 <div class="row">
                     <div>
                         <div class="modal-body">
+                            <h2>Distance Travelled</h2>
+                            <hr class="star-primary">
+                            
+                            <div class="col-lg-6">
+                                <h3>Longest distance traveled</h3>
+                                <canvas id="distanceChart" width="600" height="400"></canvas>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <h3>Longest distance traveled</h3>
+                                <canvas id="myChart2" width="600" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="modal-body">
+                            <h2>Calories Burned</h2>
+                            <hr class="star-primary">
+                            
+                            <div class="col-lg-6">
+                                <h3>Longest distance traveled</h3>
+                                <canvas id="caloriesChart" width="600" height="400"></canvas>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <h3>Longest distance traveled</h3>
+                                <canvas id="myChart2" width="600" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="modal-body">
+                            <h2>The Hibernating Bear</h2>
+                            <hr class="star-primary">
+                            
+                            <div class="col-lg-6">
+                                <h3>Most Hours Slept</h3>
+                                <canvas id="sleepChart" width="600" height="400"></canvas>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <h3>Longest distance traveled</h3>
+                                <canvas id="myChart2" width="600" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="modal-body">
+                            <h2>Active Hours</h2>
+                            <hr class="star-primary">
+                            
+                            <div class="col-lg-6">
+                                <h3>Longest distance traveled</h3>
+                                <canvas id="activeHoursChart" width="600" height="400"></canvas>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <h3>Longest distance traveled</h3>
+                                <canvas id="myChart2" width="600" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="modal-body">
+                            <h2>The Netflix binging couch potato</h2>
+                            <hr class="star-primary">
+                            
+                            <div class="col-lg-6">
+                                <h3>Most time sedentary</h3>
+                                <canvas id="couchPotatoChart" width="600" height="400"></canvas>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <h3>Longest distance traveled</h3>
+                                <canvas id="myChart2" width="600" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="modal-body">
                             <h2>Distance Awards</h2>
                             <hr class="star-primary">
                             
@@ -262,7 +436,6 @@
             </div>
         </div>
     </div>
-
 
 
 <!--************************8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888-->
@@ -474,8 +647,8 @@
     ]
 }
 
- var barData2 = {
-    labels : ["January","February","March","April","May","June"],
+var distanceData = {
+    labels : [],
     datasets : [
         {
             fillColor : "rgba(172,194,132,0.4)",
@@ -484,22 +657,77 @@
             pointStrokeColor : "#9DB86D",
             Direction: 'horizontal',
             responsive: true,
-            data : [203,156,99,251,305,247]
+            data : []
         }
     ]
 }
 
+var calorieData = {
+    labels : [],
+    datasets : [
+        {
+            fillColor : "rgba(172,194,132,0.4)",
+            strokeColor : "#ACC26D",
+            pointColor : "#fff",
+            pointStrokeColor : "#9DB86D",
+            Direction: 'horizontal',
+            responsive: true,
+            data : []
+        }
+    ]
+}
 
-    //var myChart = document.getElementById("myChart2").getContext("2d");
-   // new Chart(myChart).Bar(barData);
+var sleepChartData = {
+    labels : [],
+    datasets : [
+        {
+            fillColor : "rgba(172,194,132,0.4)",
+            strokeColor : "#ACC26D",
+            pointColor : "#fff",
+            pointStrokeColor : "#9DB86D",
+            Direction: 'horizontal',
+            responsive: true,
+            data : []
+        }
+    ]
+}
 
-   //var myChart2 = document.getElementById("myChart2").getContext("2d");
-   //new Chart(myChart2).Bar(barData);
+var activeHourData = {
+    labels : [],
+    datasets : [
+        {
+            fillColor : "rgba(172,194,132,0.4)",
+            strokeColor : "#ACC26D",
+            pointColor : "#fff",
+            pointStrokeColor : "#9DB86D",
+            Direction: 'horizontal',
+            responsive: true,
+            data : []
+        }
+    ]
+}
 
+var couchPotatoData = {
+    labels : [],
+    datasets : [
+        {
+            fillColor : "rgba(172,194,132,0.4)",
+            strokeColor : "#ACC26D",
+            pointColor : "#fff",
+            pointStrokeColor : "#9DB86D",
+            Direction: 'horizontal',
+            responsive: true,
+            data : []
+        }
+    ]
+}
 
    function distanceTravelled(){
         var distanceTravelledData = [];
         var promises = [];
+
+        distanceData.labels = [];
+        distanceData.datasets[0].data = [];
 
         for (var i = 0; i < activeElements.length ; i++) {
             var currentPerson = activeElements[i];
@@ -518,19 +746,162 @@
 
         $.when.apply($,promises).done(function(inputs){
             distanceTravelledData = distanceTravelledData.sort(function(a,b){
-                return b.Distance - a.Distance;
+                return b.Total - a.Total;
             });
 
 
-            barData.labels = [];
-            barData.datasets[0].data = [];
+            
 
             for (var k = 0; k < distanceTravelledData.length; k++) {
-                barData.labels.push(distanceTravelledData[k].Person);
-                barData.datasets[0].data.push(distanceTravelledData[k].Distance);
+                distanceData.labels.push(distanceTravelledData[k].Person);
+                distanceData.datasets[0].data.push(distanceTravelledData[k].Total);
             };
-            updateNow();
+            updateDistanceChartNow();
         });
+   }
+
+   function caloriesBurned(){
+        var caloriesBurnedData = [];
+        var promises = [];
+
+        calorieData.labels = [];
+        calorieData.datasets[0].data = [];
+        updateCalorieChartNow();
+
+        for (var i = 0; i < activeElements.length ; i++) {
+            var currentPerson = activeElements[i];
+
+            for (var j = 0; j < currentPerson.Attributes.length; j++) {
+                var currentAttribute = currentPerson.Attributes[j];
+
+                if (currentAttribute.Attribute == "Calories") { 
+                    var attr = currentAttribute;
+                    var person = currentPerson;
+
+                    promises.push(getAttributeTotal(currentAttribute,currentPerson,caloriesBurnedData));    
+                }
+            }
+        }
+
+        $.when.apply($,promises).done(function(inputs){
+            caloriesBurnedData = caloriesBurnedData.sort(function(a,b){
+                return b.Total - a.Total;
+            });
+
+            for (var k = 0; k < caloriesBurnedData.length; k++) {
+                calorieData.labels.push(caloriesBurnedData[k].Person);
+                calorieData.datasets[0].data.push(caloriesBurnedData[k].Total);
+            };
+            updateCalorieChartNow();
+        }); 
+   }
+
+    function sleep(){
+        var sleepData = [];
+        var promises = [];
+
+        sleepChartData.labels = [];
+        sleepChartData.datasets[0].data = [];
+        updateSleepChartNow();
+
+        for (var i = 0; i < sleepElements.length ; i++) {
+            var currentPerson = sleepElements[i];
+
+            for (var j = 0; j < currentPerson.Attributes.length; j++) {
+                var currentAttribute = currentPerson.Attributes[j];
+
+                if (currentAttribute.Attribute == "Hours asleep") { 
+                    var attr = currentAttribute;
+                    var person = currentPerson;
+
+                    promises.push(getAttributeTotal(currentAttribute,currentPerson,sleepData));    
+                }
+            }
+        }
+
+        $.when.apply($,promises).done(function(inputs){
+            sleepData = sleepData.sort(function(a,b){
+                return b.Total - a.Total;
+            });
+
+            for (var k = 0; k < sleepData.length; k++) {
+                sleepChartData.labels.push(sleepData[k].Person);
+                sleepChartData.datasets[0].data.push(sleepData[k].Total);
+            };
+            updateSleepChartNow();
+        }); 
+   }
+
+   function activeHours(){
+        var activeHoursD = [];
+        var promises = [];
+
+        activeHourData.labels = [];
+        activeHourData.datasets[0].data = [];
+        updateActiveHoursNow();
+
+        for (var i = 0; i < activeElements.length ; i++) {
+            var currentPerson = activeElements[i];
+
+            for (var j = 0; j < currentPerson.Attributes.length; j++) {
+                var currentAttribute = currentPerson.Attributes[j];
+
+                if (currentAttribute.Attribute == "Active hours") { 
+                    var attr = currentAttribute;
+                    var person = currentPerson;
+
+                    promises.push(getAttributeTotal(currentAttribute,currentPerson,activeHoursD));    
+                }
+            }
+        }
+
+        $.when.apply($,promises).done(function(inputs){
+            activeHoursD = activeHoursD.sort(function(a,b){
+                return b.Total - a.Total;
+            });
+
+            for (var k = 0; k < activeHoursD.length; k++) {
+                activeHourData.labels.push(activeHoursD[k].Person);
+                activeHourData.datasets[0].data.push(activeHoursD[k].Total);
+            };
+            updateActiveHoursNow();
+        });  
+   }
+
+   function couchPotato(){
+        var couchPotatoHours = [];
+        var promises = [];
+
+        couchPotatoData.labels = [];
+        couchPotatoData.datasets[0].data = [];
+        updateCouchPotatoNow();
+
+        for (var i = 0; i < activeElements.length ; i++) {
+            var currentPerson = activeElements[i];
+
+            for (var j = 0; j < currentPerson.Attributes.length; j++) {
+                var currentAttribute = currentPerson.Attributes[j];
+
+                if (currentAttribute.Attribute == "Minutes sedentary") { 
+                    var attr = currentAttribute;
+                    var person = currentPerson;
+
+                    promises.push(getAttributeTotal(currentAttribute,currentPerson,couchPotatoHours));    
+                }
+            }
+        }
+
+        $.when.apply($,promises).done(function(inputs){
+            couchPotatoHours = couchPotatoHours.sort(function(a,b){
+                return b.Total - a.Total;
+            });
+
+            for (var k = 0; k < couchPotatoHours.length; k++) {
+                couchPotatoData.labels.push(couchPotatoHours[k].Person);
+                couchPotatoData.datasets[0].data.push(couchPotatoHours[k].Total);
+            };
+            updateCouchPotatoNow();
+        });  
    }
 
    function getAttributeTotal(attribute,person,destination){
@@ -538,41 +909,50 @@
                 type : 'GET', 
                 headers: { "Authorization" : "Basic " + btoa("osiproghack\\hackuser051:bO2rA53P2")},
                 success : function(results){
-                    destination.push({ Person:person.Person, Distance:results.Items[0].Value.Value});
+                    destination.push({ Person:person.Person, Total:results.Items[0].Value.Value});
                 }
             });
    }
 
-    function updateChart() {
-        setTimeout(function() { updateNow(); }, 1000);
-    }
-
-    function updateNow (){
-        var chartCanvas = document.getElementById("myChart");
+    function updateDistanceChartNow (){
+        var chartCanvas = document.getElementById("distanceChart");
         chartCanvas.style.width = '600px';
         chartCanvas.style.height = '400px';
-        //chartCanvas.width = 600;
-        //chartCanvas.height = 400;
-        var myChart = document.getElementById("myChart").getContext("2d");
-        new Chart(myChart).Bar(barData);
+        var myChart = document.getElementById("distanceChart").getContext("2d");
+        new Chart(myChart).Bar(distanceData);
     }
 
-    function updateChart2() {
-        setTimeout(function() { updateNow2(); }, 1000);
-    }
-
-    function updateNow2(){
-        var chartCanvas = document.getElementById("myChart2");
+    function updateCalorieChartNow (){
+        var chartCanvas = document.getElementById("caloriesChart");
         chartCanvas.style.width = '600px';
         chartCanvas.style.height = '400px';
-        //chartCanvas.width = 600;
-        //chartCanvas.height = 400;
-        var myChart2 = document.getElementById("myChart2").getContext("2d");
-        new Chart(myChart2).Bar(barData2);
+        var myChart = document.getElementById("caloriesChart").getContext("2d");
+        new Chart(myChart).Bar(calorieData);
     }
 
+    function updateSleepChartNow (){
+        var chartCanvas = document.getElementById("sleepChart");
+        chartCanvas.style.width = '600px';
+        chartCanvas.style.height = '400px';
+        var myChart = document.getElementById("sleepChart").getContext("2d");
+        new Chart(myChart).Bar(sleepChartData);
+    }
 
+    function updateActiveHoursNow (){
+        var chartCanvas = document.getElementById("activeHoursChart");
+        chartCanvas.style.width = '600px';
+        chartCanvas.style.height = '400px';
+        var myChart = document.getElementById("activeHoursChart").getContext("2d");
+        new Chart(myChart).Bar(activeHourData);
+    }
 
+    function updateCouchPotatoNow (){
+        var chartCanvas = document.getElementById("couchPotatoChart");
+        chartCanvas.style.width = '600px';
+        chartCanvas.style.height = '400px';
+        var myChart = document.getElementById("couchPotatoChart").getContext("2d");
+        new Chart(myChart).Bar(couchPotatoData);
+    }
 
     </script>
 
@@ -592,8 +972,6 @@
     <script src="js/freelancer.js"></script>
 
     <script src="customJS/piWebAPI.js"></script>
-
-    <!-- Chart.js -->
     
 
 </body>
