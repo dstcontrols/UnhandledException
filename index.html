@@ -770,7 +770,10 @@ var stepsTakenData = {
                 type : 'GET', 
                 headers: { "Authorization" : "Basic " + btoa("osiproghack\\hackuser051:bO2rA53P2")},
                 success : function(results){
-                    destination.push({ Person:person.Person, Total:results.Items[0].Value.Value});
+                    destination.push({ 
+                        Person : person.Person, 
+                        Total : (Math.round(100 * results.Items[0].Value.Value) / 100)
+                    });
                 }
             });
    }
