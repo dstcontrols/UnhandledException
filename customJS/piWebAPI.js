@@ -20,6 +20,8 @@ $.ajax("https://osiproghackuc2015.osisoft.com/piwebapi/assetdatabases/D0EgxEhIf8
 
 			var blackout = document.getElementById('blackout');
 			$('#blackout').css('opacity', '0');
+			$('#blackout').css('width', '0%');
+			$('#blackout').css('height', '0%');
 		});
 	});
 
