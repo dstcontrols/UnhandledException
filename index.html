@@ -235,18 +235,14 @@
                 <div class="row">
                     <div>
                         <div class="modal-body">
+                         <h3>Congratulations To</h3>
+                            <h3 id="runnerWinner" style="color:red;"></h3>
                             <h2>The Ultra Marathoner</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <h3>Travelling the greatest distance</h3>
                                 <canvas id="distanceChart" width="600" height="400"></canvas>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -270,18 +266,14 @@
                 <div class="row">
                     <div>
                         <div class="modal-body">
+                                                    <h3>Congratulations To</h3>
+                                                        <h3 id="gasWinner" style="color:red;"></h3>
                             <h2>The Gas Guzzler</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <h3>Burning calories like they're $0.50 per gallon</h3>
                                 <canvas id="caloriesChart" width="600" height="400"></canvas>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -305,18 +297,14 @@
                 <div class="row">
                     <div>
                         <div class="modal-body">
+                                                    <h3>Congratulations To</h3>
+                                                        <h3 id="sleepWinner" style="color:red;"></h3>
                             <h2>The Hibernating Bear</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <h3>Do not disturb while sleeping</h3>
                                 <canvas id="sleepChart" width="600" height="400"></canvas>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -339,19 +327,14 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <div class="modal-body">
+                        <div class="modal-body"> <h3>Congratulations To</h3>
+                                                        <h3 id="busyWinner" style="color:red;"></h3>
                             <h2>The Busy Beaver</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <h3>Perhaps a Red Bull addict</h3>
                                 <canvas id="activeHoursChart" width="600" height="400"></canvas>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -374,19 +357,14 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <div class="modal-body">
+                        <div class="modal-body"><h3>Congratulations To</h3>
+                                                        <h3 id="couchWinner" style="color:red;"></h3></h3>
                             <h2>The Couch Potato</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <h3>Most time Netflix binging</h3>
                                 <canvas id="couchPotatoChart" width="600" height="400"></canvas>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -409,19 +387,14 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <div class="modal-body">
+                        <div class="modal-body"><h3>Congratulations To</h3>
+                                                        <h3 id="stepsWinner" style="color:red;"></h3></h3>
                             <h2>Luke Powerwalker</h2>
                             <hr class="star-primary">
                             
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
+                            <div class="col-lg-12">
+                                <h3>The Most Steps Taken</h3>
                                 <canvas id="stepsTakenChart" width="600" height="400"></canvas>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <h3>Longest distance traveled</h3>
-                                <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -544,6 +517,7 @@ var stepsTakenData = {
     ]
 }
 
+var winner;
 
    function distanceTravelled(){
         var distanceTravelledData = [];
@@ -578,8 +552,14 @@ var stepsTakenData = {
             for (var k = 0; k < distanceTravelledData.length; k++) {
                 distanceData.labels.push(distanceTravelledData[k].Person);
                 distanceData.datasets[0].data.push(distanceTravelledData[k].Total);
+                if(k==0)
+                    winner = distanceTravelledData[k].Person;
             };
+            winnerel = document.getElementById("runnerWinner")
+                        winnerel.innerHTML = (winner)
             updateDistanceChartNow();
+            
+
         });
    }
 
@@ -614,8 +594,14 @@ var stepsTakenData = {
             for (var k = 0; k < caloriesBurnedData.length; k++) {
                 calorieData.labels.push(caloriesBurnedData[k].Person);
                 calorieData.datasets[0].data.push(caloriesBurnedData[k].Total);
+                if(k==0)
+                    winner = caloriesBurnedData[k].Person;
+                 
             };
+            winnerel = document.getElementById("gasWinner")
+                        winnerel.innerHTML = (winner)
             updateCalorieChartNow();
+
         }); 
    }
 
@@ -650,8 +636,13 @@ var stepsTakenData = {
             for (var k = 0; k < sleepData.length; k++) {
                 sleepChartData.labels.push(sleepData[k].Person);
                 sleepChartData.datasets[0].data.push(sleepData[k].Total);
+                                if(k==0)
+                    winner = sleepData[k].Person;
             };
+                        winnerel = document.getElementById("sleepWinner")
+                        winnerel.innerHTML = (winner)
             updateSleepChartNow();
+
         }); 
    }
 
@@ -686,7 +677,12 @@ var stepsTakenData = {
             for (var k = 0; k < activeHoursD.length; k++) {
                 activeHourData.labels.push(activeHoursD[k].Person);
                 activeHourData.datasets[0].data.push(activeHoursD[k].Total);
+
+                     if(k==0)
+                    winner = activeHoursD[k].Person;
             };
+                                    winnerel = document.getElementById("busyWinner")
+                        winnerel.innerHTML = (winner)
             updateActiveHoursNow();
         });  
    }
@@ -722,8 +718,13 @@ var stepsTakenData = {
             for (var k = 0; k < couchPotatoHours.length; k++) {
                 couchPotatoData.labels.push(couchPotatoHours[k].Person);
                 couchPotatoData.datasets[0].data.push(couchPotatoHours[k].Total);
+                                               if(k==0)
+                    winner = couchPotatoHours[k].Person;
             };
+                                                winnerel = document.getElementById("couchWinner")
+                        winnerel.innerHTML = (winner)
             updateCouchPotatoNow();
+
         });  
    }
 
@@ -758,7 +759,11 @@ var stepsTakenData = {
             for (var k = 0; k < stepsTakenD.length; k++) {
                 stepsTakenData.labels.push(stepsTakenD[k].Person);
                 stepsTakenData.datasets[0].data.push(stepsTakenD[k].Total);
+                if(k==0)
+                    winner = stepsTakenD[k].Person;
             };
+                                                            winnerel = document.getElementById("stepsWinner")
+                        winnerel.innerHTML = (winner)
             updateStepsTaken();
         });  
    }
@@ -778,7 +783,7 @@ var stepsTakenData = {
 
     function updateDistanceChartNow (){
         var chartCanvas = document.getElementById("distanceChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("distanceChart").getContext("2d");
         new Chart(myChart).Bar(distanceData);
@@ -786,7 +791,7 @@ var stepsTakenData = {
 
     function updateCalorieChartNow (){
         var chartCanvas = document.getElementById("caloriesChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("caloriesChart").getContext("2d");
         new Chart(myChart).Bar(calorieData);
@@ -794,7 +799,7 @@ var stepsTakenData = {
 
     function updateSleepChartNow (){
         var chartCanvas = document.getElementById("sleepChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("sleepChart").getContext("2d");
         new Chart(myChart).Bar(sleepChartData);
@@ -802,7 +807,7 @@ var stepsTakenData = {
 
     function updateActiveHoursNow (){
         var chartCanvas = document.getElementById("activeHoursChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("activeHoursChart").getContext("2d");
         new Chart(myChart).Bar(activeHourData);
@@ -810,7 +815,7 @@ var stepsTakenData = {
 
     function updateCouchPotatoNow (){
         var chartCanvas = document.getElementById("couchPotatoChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("couchPotatoChart").getContext("2d");
         new Chart(myChart).Bar(couchPotatoData);
@@ -818,7 +823,7 @@ var stepsTakenData = {
 
     function updateStepsTaken(){
         var chartCanvas = document.getElementById("stepsTakenChart");
-        chartCanvas.style.width = '600px';
+        chartCanvas.style.width = '100%';
         chartCanvas.style.height = '400px';
         var myChart = document.getElementById("stepsTakenChart").getContext("2d");
         new Chart(myChart).Bar(stepsTakenData);
