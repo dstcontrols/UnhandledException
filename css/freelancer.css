@@ -259,7 +259,7 @@ section.success a.active {
 
 @media(min-width:767px) {
     #portfolio .portfolio-item {
-        margin: 0 0 30px;
+        margin: 0 0 100px;
     }
 }
 
