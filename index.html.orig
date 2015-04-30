@@ -95,20 +95,23 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="updateChart(); updateChart2();">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="distanceTravelled(); updateChart(); updateChart2();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/road29.svg" class="img-responsive" alt="">
+                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
                     </a>
                 </div>
+<<<<<<< HEAD
+=======
 
 
 
 
 
+>>>>>>> origin/sarven
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -263,11 +266,15 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+=======
 
 
 <!--************************8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888-->
 
   <!-- <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+>>>>>>> origin/sarven
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -490,6 +497,7 @@
 }
 
 
+<<<<<<< HEAD
     //var myChart = document.getElementById("myChart2").getContext("2d");
    // new Chart(myChart).Bar(barData);
 
@@ -542,6 +550,13 @@
                 }
             });
    }
+=======
+    var myChart = document.getElementById("myChart2").getContext("2d");
+    new Chart(myChart).Bar(barData);
+
+    var myChart2 = document.getElementById("myChart2").getContext("2d");
+    new Chart(myChart2).Bar(barData);
+>>>>>>> origin/sarven
 
     function updateChart() {
         setTimeout(function() { updateNow(); }, 1000);
