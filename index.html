@@ -259,6 +259,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                </div>
             </div>
         </div>
     </div>
@@ -468,6 +471,7 @@
             strokeColor : "#ACC26D",
             pointColor : "#fff",
             pointStrokeColor : "#9DB86D",
+            responsive: true,
             data : [203,156,99,251,305,247]
         }
     ]
@@ -481,6 +485,8 @@
             strokeColor : "#ACC26D",
             pointColor : "#fff",
             pointStrokeColor : "#9DB86D",
+            Direction: 'horizontal',
+            responsive: true,
             data : [203,156,99,251,305,247]
         }
     ]
@@ -493,9 +499,6 @@
     var myChart2 = document.getElementById("myChart2").getContext("2d");
     new Chart(myChart2).Bar(barData);
 
-
-
-
     function updateChart() {
 setTimeout(function() { updateNow(); }, 1000);
 }
@@ -503,8 +506,8 @@ setTimeout(function() { updateNow(); }, 1000);
         var chartCanvas = document.getElementById("myChart");
         chartCanvas.style.width = '600px';
         chartCanvas.style.height = '400px';
-        chartCanvas.width = 600;
-        chartCanvas.height = 400;
+        //chartCanvas.width = 600;
+        //chartCanvas.height = 400;
         var myChart = document.getElementById("myChart").getContext("2d");
         new Chart(myChart).Bar(barData);
     }
@@ -516,8 +519,8 @@ setTimeout(function() { updateNow2(); }, 1000);
         var chartCanvas = document.getElementById("myChart2");
         chartCanvas.style.width = '600px';
         chartCanvas.style.height = '400px';
-        chartCanvas.width = 600;
-        chartCanvas.height = 400;
+        //chartCanvas.width = 600;
+        //chartCanvas.height = 400;
         var myChart2 = document.getElementById("myChart2").getContext("2d");
         new Chart(myChart2).Bar(barData2);
     }
