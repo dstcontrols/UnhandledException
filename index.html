@@ -50,12 +50,12 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-left">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#Portfolio">Awards</a>
+                        <a href="#portfolio">Awards</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">About</a>
@@ -89,13 +89,13 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
 
-                    <h2>Awards</h2>
+                    <h2>2015 Awards</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="distanceTravelled(); updateChart(); updateChart2();">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" onclick="updateChart(); updateChart2();">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -104,6 +104,11 @@
                         <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
                     </a>
                 </div>
+
+
+
+
+
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -158,6 +163,8 @@
         </div>
     </section>
 
+
+
     <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
@@ -188,7 +195,7 @@
                         <p>651 Stone Road<br>Benicia, CA 94510</p>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
+                        <h3>On the Web</h3>
                         <ul class="list-inline">
                             <li>
                                 <a href="http://dstcontrols.com/" class="btn-social btn-outline"><i class="fa fa-fw fa-info"></i></a>
@@ -196,8 +203,8 @@
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>About Unhandled Exception</h3>
-                        <p></a></p>
+                        <h3>The Unhandled Team</h3>
+                        <p><ul style="text-align:left;"><li>Alan Kenyon</li><li>Jerry Vin</li><li>Sarven Buyuker</li></ul></p>
                     </div>
                 </div>
             </div>
@@ -236,24 +243,31 @@
                             <h2>Distance Awards</h2>
                             <hr class="star-primary">
                             
-                            <div style="width: 50%; float:left;">
+                            <div class="col-lg-6">
                                 <h3>Longest distance traveled</h3>
                                 <canvas id="myChart" width="600" height="400"></canvas>
                             </div>
 
 
-                            <div style="width:50%; margin-left:50%;">
-                                <h3 style="margin-top:54px;">Longest distance traveled</h3>
+                            <div class="col-lg-6">
+                                <h3>Longest distance traveled</h3>
                                 <canvas id="myChart2" width="600" height="400"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+<!--************************8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888-->
+
+  <!-- <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -437,7 +451,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -454,6 +468,7 @@
             strokeColor : "#ACC26D",
             pointColor : "#fff",
             pointStrokeColor : "#9DB86D",
+            responsive: true,
             data : [203,156,99,251,305,247]
         }
     ]
@@ -467,6 +482,8 @@
             strokeColor : "#ACC26D",
             pointColor : "#fff",
             pointStrokeColor : "#9DB86D",
+            Direction: 'horizontal',
+            responsive: true,
             data : [203,156,99,251,305,247]
         }
     ]
@@ -534,8 +551,8 @@
         var chartCanvas = document.getElementById("myChart");
         chartCanvas.style.width = '600px';
         chartCanvas.style.height = '400px';
-        chartCanvas.width = 600;
-        chartCanvas.height = 400;
+        //chartCanvas.width = 600;
+        //chartCanvas.height = 400;
         var myChart = document.getElementById("myChart").getContext("2d");
         new Chart(myChart).Bar(barData);
     }
@@ -548,8 +565,8 @@
         var chartCanvas = document.getElementById("myChart2");
         chartCanvas.style.width = '600px';
         chartCanvas.style.height = '400px';
-        chartCanvas.width = 600;
-        chartCanvas.height = 400;
+        //chartCanvas.width = 600;
+        //chartCanvas.height = 400;
         var myChart2 = document.getElementById("myChart2").getContext("2d");
         new Chart(myChart2).Bar(barData2);
     }
